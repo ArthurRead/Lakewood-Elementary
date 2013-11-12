@@ -11,7 +11,7 @@ using namespace std;
 
 int main ()
 {
-cout <<"Hi";
+cout <<"Hi Dude";
 
 	return 0;
 }
