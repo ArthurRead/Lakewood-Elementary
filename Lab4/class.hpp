@@ -10,7 +10,7 @@
 
 #include <iostream>
 #include <string>
-// ok
+// ok dude
 using namespace std;
 
 class BloodTest{
