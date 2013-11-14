@@ -11,6 +11,7 @@
 #include <iostream>
 #include <string>
 // ok dude
+//ok
 using namespace std;
 
 class BloodTest{
