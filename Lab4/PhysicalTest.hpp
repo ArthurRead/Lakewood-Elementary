@@ -80,10 +80,10 @@ class NonVitalsTest : public PhysicalTests {
 					//20/20 means 20feet person vs 20 feet normal average person
 
 
-	void Skinapperance(); //maybe?
-	void earcheck_hearingcheck();
-	void paincheck();
-	void eyesightcheck();	//finds 20/20 perfect vision, or some sort of vision
+	void Skinapperance_skincancer(); //maybe?
+	void earcheck_hearingcheck_hearingloss();
+	void paincheck_problem_withskin();
+	void eyesightcheck_blindness();	//finds 20/20 perfect vision, or some sort of vision
 
 	void nosecheck(); //related to breathing eventually, maybe remove?
 
