@@ -15,6 +15,10 @@ using namespace std;
 
 class PhysicalTests {
 
+	int checkweight;
+	int checkheight;
+
+
 //this will contain variables related to the three derived classes
 	//i.e. such as a needle or some instrument used for three of the tests.
 
@@ -22,7 +26,15 @@ class PhysicalTests {
 
 class VitalSignsTest : public PhysicalTests{
 
+	int theromemeter;
+	int bloodpressuremonitor;
+	int stethescope;	//for breathing
 
+
+void BloodPressure();
+void Pulse();
+void BodyTemp();
+void Breathing();
 
 };
 
