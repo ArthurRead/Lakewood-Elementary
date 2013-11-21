@@ -12,6 +12,7 @@ using namespace std;
 int main ()
 {
 cout <<"Hi Dudeeeee";
-
+cout <<"This probably works?";
+cout << "WTF?";
 	return 0;
 }
