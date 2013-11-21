@@ -21,6 +21,13 @@ class PhysicalTests {
 	int redbloodcells;
 	int whitebloodcells;
 
+	int color;
+
+
+	void Person_to_administer_test();
+
+	//more to be added in the base class
+
 
 };
 
@@ -62,24 +69,36 @@ void bacterialcheck(/*int whitebloodcells and nitrite*/);		//high white bloodcel
 
 class NonVitalsTest : public PhysicalTests {
 
+	int texture;
+	int moisture;
+	int bumps_on_skin;
+
+	int hearing_level;
+
+	int ABCabc_sightchart;
+	int distance;	//for the 20/20 checking
+					//20/20 means 20feet person vs 20 feet normal average person
+
+
 	void Skinapperance(); //maybe?
 	void earcheck_hearingcheck();
 	void paincheck();
-	void eyesightcheck();
+	void eyesightcheck();	//finds 20/20 perfect vision, or some sort of vision
 
 	void nosecheck(); //related to breathing eventually, maybe remove?
-
-
 
 };
 
 class MobilityTest : public PhysicalTests {	//definetly this one
 
+	int joint_mobility;	//limited, average, too much
+	int type_of_spine_allignemnt;  //curved, bent, straight, etc.
+	int reflexhammer;
 
 	void neckmovement();
 	void armmovement();
 	void legmovement();
-	void spinmovement();
+	void spinemovement();
 };
 
 class NervousSystem : public PhysicalTests {	//maybe don't do this class?
