@@ -26,9 +26,19 @@ class VitalSignsTest : public PhysicalTests{
 
 };
 
-class
+class UrineSampleTest : public PhysicalTests{
 
 
+
+
+};
+
+class EyesightTest : public PhysicalTests {
+
+
+
+
+};
 
 
 
