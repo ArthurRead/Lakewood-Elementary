@@ -65,8 +65,14 @@ public:
 void settingCT();
 };
 class Ultrasound : public Imaging{
-
-
+int samplesperpixel;
+int photometricInterpretation;
+int bitallocated;
+int bitstored;
+int highbit;
+int planerconfig;
+int frameincrementpointer;
+int lossyimagecompression; // either 00 or 01
 public:
 
 };
