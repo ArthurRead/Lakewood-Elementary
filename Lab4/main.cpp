@@ -14,5 +14,6 @@ int main ()
 cout <<"Hi Dudeeeee";
 cout <<"This probably works?";
 cout << "WTF? ADD THIS";
+cout <<"OMGBBQWTF!?";
 	return 0;
 }
