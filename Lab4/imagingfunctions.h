@@ -41,5 +41,9 @@ void Ct::settingCT()
 
 
 }
+void MRI::MRIScanningSeq()
+{
+
+}
 
 #endif /* IMAGINGFUNCTIONS_H_ */

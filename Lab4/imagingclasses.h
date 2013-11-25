@@ -11,19 +11,46 @@
 #include <string>
 #include "imagingfunctions.h"
 
-class MRI{
+class Imaging
+{
+protected:
+	string Doctor;
+	string Nurse;
+};
+
+class MRI : public Imaging {
 private:
-	string imagetype;
+	string imagetype; // Select either MPR ,PROJECTION IMAGE, T1 MAP,
+	//T2 MAP, DIFFUSION MAP, DENSITY MAP
+	//PHASE MAP, VELOCITY MAP, IMAGE ADDITION,
+	//PHASE SUBTRACT, MODULUS SUBTRACT, OTHER,
 	int samplesperpixel;
 	int bitsallocated;
 	int highbit;
 
+	// For
+	//needs enumerated values
+	//for scanning sequence   NO SE and GR together in one go
+	int SpinEcho;
+	int Inversionrecovery;
+	int GradientRecalled;
+	int Echoplanar;
+	int researchmode;
+
+	// For Sequence Variant function
+	// Ask to set any variants or leave the settings alone (all = 0)
+	// values
+	int SK;
+	int MTC;
+	int SS;
+	int TRSS;
+	int OSP;
 
 public:
 	void MRIScanningseq();
-
+	void SequenceVariant();
 };
-class Ct{
+class Ct:public Imaging{
 private:
 string imagetype;// Axial or Localizer
 int samplesperpixel;//should be one
@@ -37,10 +64,12 @@ int resaleslope; // m slope
 public:
 void settingCT();
 };
-class Ultrasound{
+class Ultrasound : public Imaging{
+
+
+public:
 
 };
-
 
 
 
