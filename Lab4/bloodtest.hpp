@@ -8,10 +8,6 @@
 #ifndef CLASS_HPP_
 #define CLASS_HPP_
 
-#include <iostream>
-#include <string>
-
-using namespace std;
 /********** Base Class **********/
 
 class BloodTest{
@@ -49,11 +45,12 @@ public:
 class BloodChemistryTest : public BloodTest{
 private:
 	int Glucose; // units: (mg/dL) (milligrams/deciliter)
-	char Diagnosis; // (N)ormal, (P)rediabetes, (D)iabetes
+	char Diagnosis; // (N)ormal, (P)rediabetes, (D)iabetes, (U)nderAverage
 	int Calcium;
 	int Electrolytes;
 public:
 	BloodChemistryTest(int G, int C, int E);
+	void GlucoseRange();
 	//function: diabetes diagnosis
 };
 
@@ -68,6 +65,10 @@ private:
 public:
 	HeartTest(string BT, string G, int T, int L, int H);
 	HeartTest(int T, int L, int H); // Gender and bloodtype not necessary for this test
+	void TestTotal();
+	void TestLDL();
+	void TestHDL();
+	void TestAll();
 };
 
 
@@ -179,6 +180,18 @@ BloodChemistryTest::BloodChemistryTest(int G, int C, int E)
 	Electrolytes = E;
 }
 
+void BloodChemistryTest::GlucoseRange()
+{
+	if(Glucose < 70)
+		Diagnosis = 'U'; // under average
+	if(Glucose >=70 && Glucose <=99)
+		Diagnosis = 'N';
+	if(Glucose >=100 && Glucose <=125)
+		Diagnosis = 'P';
+	if(Glucose >=126)
+		Diagnosis = 'D';
+}
+
 
 /********** Functions for HeartTest class **********/
 HeartTest::HeartTest(string BT, string G, int T, int L, int H)
@@ -195,6 +208,47 @@ HeartTest::HeartTest(int T, int L, int H)
 	Total = T;
 	LDL = L;
 	HDL = H;
+}
+
+void HeartTest::TestTotal()
+{
+	if(Total<200)
+		TCC = 'D';
+	if(Total >=200 && Total <=239)
+		TCC = 'B';
+	if(Total >= 240)
+		TCC = 'H';
+}
+
+void HeartTest::TestLDL()
+{
+	if(LDL<100)
+		LCC = 'O';
+	if(LDL>=100 && LDL<=129)
+		LCC = 'N';
+	if(LDL>=130 && LDL<=159)
+		LCC = 'B';
+	if(LDL>=160 && LDL<=189)
+		LCC = 'H';
+	if(LDL>=190)
+		LCC = 'V';
+}
+
+void HeartTest::TestHDL()
+{
+	if(HDL<40)
+		HCC = 'R';
+	if(HDL>=40 && HDL <=59)
+		HCC = 'G';
+	if(HDL>=60)
+		HCC = 'P';
+}
+
+void HeartTest::TestAll()
+{
+	TestTotal();
+	TestLDL();
+	TestHDL();
 }
 
 
