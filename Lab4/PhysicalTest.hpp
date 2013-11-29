@@ -16,8 +16,8 @@ using namespace std;
 class PhysicalTests {
 protected:
 	string gender;	//male / female
-	int checkweight;
-	int checkheight;
+	int checkweight;	//weight in lbs
+	int checkheight;	//height in meters
 	int age;	// patients age
 	int redbloodcells;
 	int whitebloodcells;
@@ -30,21 +30,21 @@ public:
 
 class VitalSignsTest : public PhysicalTests{	//for sure this one as well
 private:
-	int theromemeter_reading;	//!
-	int bloodpressuremonitor;	//!
-	int stethescope;	//for breathing
-	string methodoftakingtemperature;	//!
-	int pulse;	//!
-	int systolic;	//!
-	int diastolic;	//!
-	int HL_BloodPressure;	//0  normal, 1 warning for high, 2 high blood, -1 low blood
-	int Heartcondition; //0 athlete, 1 excellent, 2 good, 3 above average, 4 average, 5 below, 6 poor
-	int Tempregulation;	//!
-	int breathrate;
-	int respiratory;
+	int theromemeter_reading;	//temperature in Celcius
+	int bloodpressuremonitor;	//equipment used for heart and blood pressure
+	int stethescope;	//equipment for breathing
+	string methodoftakingtemperature;	//how the temperature is taken, i.e. armpit, supository, etc.
+	int pulse;	//heart beats/min
+	int systolic;	//pressure in Hg (top number in blood pressure reading)
+	int diastolic;	//pressure in Hg (bottom number in blood pressure reading)
+	int HL_BloodPressure;	//0  normal, 1 warning for high, 2 high blood, -1 low blood - patient status for BP
+	int Heartcondition; //0 athlete, 1 excellent, 2 good, 3 above average, 4 average, 5 below, 6 poor - patient status for HC
+	int Tempregulation;	//0 normal, 1 higher, 2 high, 3 dangerous, -1 below normal - patient temperature status
+	int breathrate;	//breaths / min
+	int respiratory; //0 normal, -1 below normal, 1 higher than normal - patients breathing status
 public:
 	void BloodPressure();
-	void HeartBeat();	//pulse uses bloodpressure to determine strength, and pulse.
+	void HeartBeat();
 	void BodyTemp();
 	void Breathing();
 	void VitalsCheck();
