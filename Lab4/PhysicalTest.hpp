@@ -70,6 +70,21 @@ public:
 	void UrineCheck();
 	};
 
+class MobilityTest : public PhysicalTests {	//definetly this one
+private:
+	int joint_mobility;	// angle of mobile joint
+	int type_of_spine_allignemnt;  //curved, bent, straight, etc.
+	int reflexhammer;
+	int paralyzed;	//limited, average, too much
+	int  T25FW; //Time to walk 25 foot steps test (actual test), if completed in a certain time = normal movement for legs
+public:
+	void neckmovement();
+	void armmovement();
+	void legmovement();
+	void spinemovement();
+	void Testmobilitystatus();       //can move, somewhat, paralyzed
+};
+
 //class NonVitalsTest : public PhysicalTests {
 //
 //	int texture;
@@ -90,25 +105,6 @@ public:
 //	void nosecheck(); //related to breathing eventually, maybe remove?
 //
 //};
-
-
-
-class MobilityTest : public PhysicalTests {	//definetly this one
-private:
-	int joint_mobility;	// angle of mobile joint
-	int type_of_spine_allignemnt;  //curved, bent, straight, etc.
-	int reflexhammer;
-	int paralyzed;	//limited, average, too much
-	int  T25FW; //Time to walk 25 foot steps test (actual test), if completed in a certain time = normal movement for legs
-public:
-	void neckmovement();
-	void armmovement();
-	void legmovement();
-	void spinemovement();
-	void Testmobilitystatus();       //can move, somewhat, paralyzed
-};
-
-
 
 //class NervousSystem : public PhysicalTests {	//maybe don't do this class?
 //
@@ -459,7 +455,6 @@ void MobilityTest::spinemovement(){
 
 	if (type_of_spine_allignemnt == 'straight'){
 		paralyzed = -1;
-
 
 }
 
