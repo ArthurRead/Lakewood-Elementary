@@ -15,14 +15,13 @@ using namespace std;
 
 class PhysicalTests {
 protected:
-	string gender;
+	string gender;	//male / female
 	int checkweight;
 	int checkheight;
-	int age;
+	int age;	// patients age
 	int redbloodcells;
 	int whitebloodcells;
 	int color;
-
 
 public:
 	void Person_to_administer_test();
@@ -31,16 +30,18 @@ public:
 
 class VitalSignsTest : public PhysicalTests{	//for sure this one as well
 private:
-	int theromemeter;
-	int bloodpressuremonitor;
+	int theromemeter_reading;	//!
+	int bloodpressuremonitor;	//!
 	int stethescope;	//for breathing
-	string methodoftakingtemperature;
-	int pulse;
-	int systolic;
-	int diastolic;
+	string methodoftakingtemperature;	//!
+	int pulse;	//!
+	int systolic;	//!
+	int diastolic;	//!
 	int HL_BloodPressure;	//0  normal, 1 warning for high, 2 high blood, -1 low blood
 	int Heartcondition; //0 athlete, 1 excellent, 2 good, 3 above average, 4 average, 5 below, 6 poor
-
+	int Tempregulation;	//!
+	int breathrate;
+	int respiratory;
 public:
 	void BloodPressure();
 	void HeartBeat();	//pulse uses bloodpressure to determine strength, and pulse.
@@ -115,10 +116,8 @@ class NervousSystem : public PhysicalTests {	//maybe don't do this class?
 };
 
 
-
-//	void BodyTemp();
 //	void Breathing();
-//	void VitalsCheck();
+
 
 void VitalSignsTest::BloodPressure(){
 	if (bloodpressuremonitor == 1){	//if bloodpressure monitor used
@@ -142,9 +141,6 @@ void VitalSignsTest::BloodPressure(){
 			else{
 				cout << "This Patient is in serious danger of dying!!!!";
 			}
-
-
-
 		}
 	}
 
@@ -248,31 +244,31 @@ void VitalSignsTest::HeartBeat(){
 				if (pulse >= 85){Heartcondition == 6;}
 			}
 			if (age >=46 && age <=55){
-				if (pulse >= 50 && pulse >= 55){Heartcondition == 0;}
-				if (pulse >= 56 && pulse >= 61){Heartcondition == 1;}
-				if (pulse >= 62 && pulse >= 65){Heartcondition == 2;}
-				if (pulse >= 66 && pulse >= 69){Heartcondition == 3;}
-				if (pulse >= 70 && pulse >= 73){Heartcondition == 4;}
-				if (pulse >= 74 && pulse >= 79){Heartcondition == 5;}
-				if (pulse >= 80){Heartcondition == 6;}
+				if (pulse >= 54 && pulse >= 60){Heartcondition == 0;}
+				if (pulse >= 61 && pulse >= 65){Heartcondition == 1;}
+				if (pulse >= 66 && pulse >= 69){Heartcondition == 2;}
+				if (pulse >= 70 && pulse >= 73){Heartcondition == 3;}
+				if (pulse >= 74 && pulse >= 77){Heartcondition == 4;}
+				if (pulse >= 78 && pulse >= 83){Heartcondition == 5;}
+				if (pulse >= 84){Heartcondition == 6;}
 			}
 			if (age >=56 && age <=65){
-				if (pulse >= 50 && pulse >= 55){Heartcondition == 0;}
-				if (pulse >= 56 && pulse >= 61){Heartcondition == 1;}
-				if (pulse >= 62 && pulse >= 65){Heartcondition == 2;}
-				if (pulse >= 66 && pulse >= 69){Heartcondition == 3;}
-				if (pulse >= 70 && pulse >= 73){Heartcondition == 4;}
-				if (pulse >= 74 && pulse >= 79){Heartcondition == 5;}
-				if (pulse >= 80){Heartcondition == 6;}
+				if (pulse >= 54 && pulse >= 59){Heartcondition == 0;}
+				if (pulse >= 60 && pulse >= 64){Heartcondition == 1;}
+				if (pulse >= 65 && pulse >= 68){Heartcondition == 2;}
+				if (pulse >= 69 && pulse >= 73){Heartcondition == 3;}
+				if (pulse >= 74 && pulse >= 77){Heartcondition == 4;}
+				if (pulse >= 78 && pulse >= 83){Heartcondition == 5;}
+				if (pulse >= 84){Heartcondition == 6;}
 			}
 			if (age >= 66){
-				if (pulse >= 50 && pulse >= 55){Heartcondition == 0;}
-				if (pulse >= 56 && pulse >= 61){Heartcondition == 1;}
-				if (pulse >= 62 && pulse >= 65){Heartcondition == 2;}
-				if (pulse >= 66 && pulse >= 69){Heartcondition == 3;}
-				if (pulse >= 70 && pulse >= 73){Heartcondition == 4;}
-				if (pulse >= 74 && pulse >= 79){Heartcondition == 5;}
-				if (pulse >= 80){Heartcondition == 6;}
+				if (pulse >= 54 && pulse >= 59){Heartcondition == 0;}
+				if (pulse >= 60 && pulse >= 64){Heartcondition == 1;}
+				if (pulse >= 65 && pulse >= 68){Heartcondition == 2;}
+				if (pulse >= 69 && pulse >= 72){Heartcondition == 3;}
+				if (pulse >= 73 && pulse >= 76){Heartcondition == 4;}
+				if (pulse >= 77 && pulse >= 84){Heartcondition == 5;}
+				if (pulse >= 85){Heartcondition == 6;}
 			}
 
 			else {
@@ -287,7 +283,68 @@ void VitalSignsTest::HeartBeat(){
 	}
 }
 
+void VitalSignsTest::BodyTemp(){
+	if(methodoftakingtemperature == 'insert method here'){
+		if (theromemeter_reading >= 36.6 && theromemeter_reading <= 37.2){
+			Tempregulation == 0;
+		}
+		if (theromemeter_reading >= 37.3 && theromemeter_reading <= 38.6){
+			 Tempregulation == 1;
+		}
+		if (theromemeter_reading >= 38.7 && theromemeter_reading <= 41.6){
+					 Tempregulation == 2;
+		}
+		if (theromemeter_reading >= 41.7){
+					cout << "Near death!";
+					Tempregulation == 3;
+		}
+		if (theromemeter_reading <= 36.5){
+			 Tempregulation == -1;
+		}
+	}
 
+	else {
+		cout << "Please use the correct method!";
+
+	}
+}
+
+void VitalSignsTest::Breathing(){	//use blood pressure to influence breathing rate
+	if (stethescope == 1){
+			if (checkweight >= 5 && checkweight <= 15){
+				if (breathrate >= 30 && breathrate <= 60){respiratory == 0;}
+				if (breathrate <= 29){respiratory == -1;}
+				if (breathrate >= 61){respiratory == 1;}
+			}
+			if (checkweight >= 16 && checkweight <= 50){
+				if (breathrate >= 20 && breathrate <= 30){respiratory == 0;}
+				if (breathrate <= 19){respiratory == -1;}
+				if (breathrate >= 31){respiratory == 1;}
+			}
+			if (checkweight >= 51 && checkweight <= 80){
+				if (breathrate >= 18 && breathrate <= 25){respiratory == 0;}
+				if (breathrate <= 17){respiratory == -1;}
+				if (breathrate >= 26){respiratory == 1;}
+			}
+			if (checkweight > 81){
+				if (breathrate >= 12 && breathrate <= 20){respiratory == 0;}
+				if (breathrate <= 11){respiratory == -1;}
+				if (breathrate >= 21){respiratory == 1;}
+			}
+	}
+	else {
+		cout << "Please use the proper method!";
+	}
+}
+
+void VitalSignsTest::VitalsCheck(){
+
+BloodPressure();
+HeartBeat();
+BodyTemp();
+Breathing();
+
+}
 
 
 
