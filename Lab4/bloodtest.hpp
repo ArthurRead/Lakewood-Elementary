@@ -8,6 +8,10 @@
 #ifndef CLASS_HPP_
 #define CLASS_HPP_
 
+#include <iostream>
+#include <string>
+
+using namespace std;
 /********** Base Class **********/
 
 class BloodTest{
@@ -31,6 +35,7 @@ private:
 	int Hematocrit; // units: (%)
 	int MCV; // Mean Corpuscular Volume, units: femtoliter
 	int rRBC, rWBC, rPlatelets, rHemoglobin, rHematocrit, rMCV; // results for ranges of the variable 1-normal, 0-notnormal
+	string comment;
 public:
 	CompleteBloodCount(string BT, string G, int R, int W, int P, int Hemo, int Hema, int M);
 	CompleteBloodCount(string G, int R, int W, int P, int Hemo, int Hema, int M);
@@ -40,6 +45,8 @@ public:
 	void HemRange();
 	void MCVRange();
 	void TESTALL();
+	void Results();
+	void AddComments();
 };
 
 class BloodChemistryTest : public BloodTest{
@@ -48,9 +55,12 @@ private:
 	char Diagnosis; // (N)ormal, (P)rediabetes, (D)iabetes, (U)nderAverage
 	int Calcium;
 	int Electrolytes;
+	string comment;
 public:
 	BloodChemistryTest(int G, int C, int E);
 	void GlucoseRange();
+	void Results();
+	void AddComments();
 	//function: diabetes diagnosis
 };
 
@@ -62,6 +72,7 @@ private:
 	char TCC; // Total Cholesterol Category: (D)esirable, (B)orderlineHigh, (H)igh
 	char LCC; // LDL Cholesterol Category: (O)ptimal, (N)earOptimal, (B)orderlineHigh, (H)igh, (V)eryHigh
 	char HCC; // HDL cholesterol Category: (R)isk, (G)ood, (P)rotectiveAgainstHeartDisease
+	string comment;
 public:
 	HeartTest(string BT, string G, int T, int L, int H);
 	HeartTest(int T, int L, int H); // Gender and bloodtype not necessary for this test
@@ -69,6 +80,8 @@ public:
 	void TestLDL();
 	void TestHDL();
 	void TestAll();
+	void Results();
+	void AddComments();
 };
 
 
@@ -170,6 +183,52 @@ void CompleteBloodCount::TESTALL()
 	MCVRange();
 }
 
+void CompleteBloodCount::Results()
+{
+	if(rRBC==1)
+		cout << "Normal RBC range.";
+	else
+		cout << "Not normal RBC range.";
+	cout << "\n";
+	if(rWBC==1)
+		cout << "Normal WBC range.";
+	else
+		cout << "Not normal WBC range.";
+	cout << "\n";
+	if(rPlatelets==1)
+		cout << "Normal Platelets range.";
+	else
+		cout << "Not normal Platelets range.";
+	cout << "\n";
+	if(rHemoglobin==1)
+		cout << "Normal Hemoglobin range.";
+	else
+		cout << "Not normal Hemoglobin range.";
+	cout << "\n";
+	if(rHematocrit==1)
+		cout << "Normal Hematocrit range.";
+	else
+		cout << "Not normal Hematocrit range.";
+	cout << "\n";
+	if(rMCV==1)
+		cout << "Normal MCV range.";
+	else
+		cout << "Not normal MCV range.";
+	cout << "\n";
+}
+
+void CompleteBloodCount::AddComments()
+{
+	string addc = "a";
+	cout << "Hit [Enter] key twice to end comment.";
+
+	while(addc.length()!=0)
+	{
+		getline(cin,addc);
+		comment = comment + " " + addc;
+	}
+}
+
 
 /********** Functions for BloodChemistryTest class **********/
 BloodChemistryTest::BloodChemistryTest(int G, int C, int E)
@@ -190,6 +249,30 @@ void BloodChemistryTest::GlucoseRange()
 		Diagnosis = 'P';
 	if(Glucose >=126)
 		Diagnosis = 'D';
+}
+
+void BloodChemistryTest::Results()
+{
+	if(Diagnosis=='U')
+		cout << "Under normal levels of glucose." << endl;
+	if(Diagnosis == 'N')
+		cout << "Normal levels of glucose." << endl;
+	if(Diagnosis == 'P')
+		cout << "Prediabetes range of glucose." << endl;
+	if(Diagnosis == 'D')
+		cout << "Patient has diabetes." << endl;
+}
+
+void BloodChemistryTest::AddComments()
+{
+	string addc = "a";
+	cout << "Hit [Enter] key twice to end comment.";
+
+	while(addc.length()!=0)
+	{
+		getline(cin,addc);
+		comment = comment + " " + addc;
+	}
 }
 
 
@@ -249,6 +332,44 @@ void HeartTest::TestAll()
 	TestTotal();
 	TestLDL();
 	TestHDL();
+}
+
+void HeartTest::Results()
+{
+	if(TCC == 'D')
+		cout << "Desirable cholesterol level." << endl;
+	if(TCC == 'B')
+			cout << "Borderline high cholesterol level." << endl;
+	if(TCC == 'H')
+			cout << "High cholesterol level." << endl;
+	if(LCC == 'O')
+			cout << "Optimal LDL cholesterol level." << endl;
+	if(LCC == 'N')
+			cout << "Near optimal LDL cholesterol level." << endl;
+	if(LCC == 'B')
+			cout << "Borderline high LDL cholesterol level." << endl;
+	if(LCC == 'H')
+			cout << "High cholesterol level." << endl;
+	if(LCC == 'V')
+			cout << "Very high cholesterol level." << endl;
+	if(HCC == 'R')
+			cout << "Patient has major risk of heart disease." << endl;
+	if(HCC == 'G')
+			cout << "Good levels of HCC cholesterol." << endl;
+	if(HCC == 'P')
+			cout << "Patient considered protective against heart disease." << endl;
+}
+
+void HeartTest::AddComments()
+{
+	string addc = "a";
+	cout << "Hit [Enter] key twice to end comment.";
+
+	while(addc.length()!=0)
+	{
+		getline(cin,addc);
+		comment = comment + " " + addc;
+	}
 }
 
 
