@@ -17,13 +17,10 @@ class PhysicalTests {
 protected:
 	string gender;	//male / female
 	int checkweight;	//weight in lbs
-	int checkheight;	//height in meters
 	int age;	// patients age
 
-	int color;
-
 public:
-	void Person_to_administer_test();
+	//void Person_to_administer_test();
 
 };
 
@@ -73,34 +70,36 @@ public:
 	void UrineCheck();
 	};
 
-class NonVitalsTest : public PhysicalTests {
-
-	int texture;
-	int moisture;
-	int bumps_on_skin;
-
-	int hearing_level;
-
-	int ABCabc_sightchart;
-	int distance;	//for the 20/20 checking
-					//20/20 means 20feet person vs 20 feet normal average person
-
-	void Skinapperance_skincancer(); //maybe?
-	void earcheck_hearingcheck_hearingloss();
-	void paincheck_problem_withskin();
-	void eyesightcheck_blindness();	//finds 20/20 perfect vision, or some sort of vision
-
-	void nosecheck(); //related to breathing eventually, maybe remove?
-
-};
+//class NonVitalsTest : public PhysicalTests {
+//
+//	int texture;
+//	int moisture;
+//	int bumps_on_skin;
+//
+//	int hearing_level;
+//
+//	int ABCabc_sightchart;
+//	int distance;	//for the 20/20 checking
+//					//20/20 means 20feet person vs 20 feet normal average person
+//
+//	void Skinapperance_skincancer(); //maybe?
+//	void earcheck_hearingcheck_hearingloss();
+//	void paincheck_problem_withskin();
+//	void eyesightcheck_blindness();	//finds 20/20 perfect vision, or some sort of vision
+//
+//	void nosecheck(); //related to breathing eventually, maybe remove?
+//
+//};
 
 
 
 class MobilityTest : public PhysicalTests {	//definetly this one
 private:
-	int joint_mobility;	//limited, average, too much, angle of mobile joint
+	int joint_mobility;	// angle of mobile joint
 	int type_of_spine_allignemnt;  //curved, bent, straight, etc.
 	int reflexhammer;
+	int paralyzed;	//limited, average, too much
+	int  T25FW; //Time to walk 25 foot steps test (actual test), if completed in a certain time = normal movement for legs
 public:
 	void neckmovement();
 	void armmovement();
@@ -111,15 +110,15 @@ public:
 
 
 
-class NervousSystem : public PhysicalTests {	//maybe don't do this class?
-
-	void checkmentalstatus();
-	void checkreflexes(); 	//related to mobility and responsivness
-	void checkcranialnerves ();
-	void checksensorysystem();
-
-
-};
+//class NervousSystem : public PhysicalTests {	//maybe don't do this class?
+//
+//	void checkmentalstatus();
+//	void checkreflexes(); 	//related to mobility and responsivness
+//	void checkcranialnerves ();
+//	void checksensorysystem();
+//
+//
+//};
 
 
 //*******************************************************************************************************
@@ -408,16 +407,61 @@ void UrineSampleTest::Urinecheck(){
 	bacterialcheck();
 }
 
+void MobilityTest::Testmobilitystatus(){
+neckmovement();
+armmovement();
+legmovement();
+spinemovement();
+
+}
 
 
+void MobilityTest::neckmovement(){
+	if (checkweight == 'between some sort of values'){
+		if (joint_mobility == 'between some range of angle values'){
+			paralyzed = 0; /*or*/ paralyzed = 1; /*or*/ paralyzed = 2;
+		}
+	}
+
+}
+
+void MobilityTest::armmovement(){
+
+				if (joint_mobility == 'between some range of angle values'){
+
+						paralyzed = 0; /*or*/ paralyzed = 1; /*or*/ paralyzed = 2;
+					}
+				}
 
 
+void MobilityTest::legmovement(){
+	if (reflexhammer == 1){
+		if (checkweight == 'between some sort of values'){
+			if (joint_mobility == 'between some range of angle values'){
+				if (T25FW == 'yes or no'){
+					paralyzed = 0; /*or*/ paralyzed = 1; /*or*/ paralyzed = 2;
+				}
+			}
+		}
+	}
+}
+
+void MobilityTest::spinemovement(){
+	if (type_of_spine_allignemnt == 'curved or bent completely'){
+		if (checkweight == 'between some sort of values'){
+			if (joint_mobility == 'between some range of angle values'){
+				paralyzed = 0; /*or*/ paralyzed = 1; /*or*/ paralyzed = 2;
+			}
+		}
+	}
+
+}
+
+	if (type_of_spine_allignemnt == 'straight'){
+		paralyzed = -1;
 
 
-
-
-
-
+}
 
 
 
