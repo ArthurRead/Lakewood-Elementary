@@ -39,7 +39,7 @@ private:
 public:
 	CompleteBloodCount(string BT, string G, int R, int W, int P, int Hemo, int Hema, int M);
 	CompleteBloodCount(string G, int R, int W, int P, int Hemo, int Hema, int M);
-		// Bloodtype not needed for these tests
+		// Bloodtype not needed for these test
 	void BloodCellRange();
 	void PlateletsRange();
 	void HemRange();
