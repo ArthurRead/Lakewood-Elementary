@@ -82,11 +82,11 @@ class Ultrasound : public Imaging{
 //int samplesperpixel;
 int photometricInterpretation;
 //int bitallocated;
-int bitstored;
+int bitstored;// how many bits are stored
 //int highbit;
-int planerconfig;
-string Pixelrep;
-string lossyimagecompression; // either 00 or 01
+int planerconfig;//
+string Pixelrep;//pixel representation
+string lossyimagecompression; // either 00 or 01 type of compression
 public:
 void displayultrasound();
 void settingultrasound();

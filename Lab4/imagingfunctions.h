@@ -43,7 +43,7 @@ void Ct::settingCT()
 	}
 	}
 	}
-	cout << "\nSmaple per pixel are automatically setted to 1 for CT scans\n?";
+	cout << "\nSmaple per pixel are automatically set to 1 for CT scans\n?";
 	int samplesperpixel=1;
 	choice =0;
 	int exit=0;
@@ -97,9 +97,12 @@ void Ct::settingCT()
 	cin >> rescaleslope;
 	cout <<"Enter any comments or just press return to enter none";
 	getline(comment);
+	cout <<"Please place the images in the same directory as the executable and rename it appropriately CT.jpg  ";
+
 }
 void Ct::displayct()
 {
+cout <<"Please place the images in the same directory as the executable and rename it appropriately CT.jpg  ";
 system("CT.jpg");
 }
 void Ct::displayall()
@@ -114,6 +117,7 @@ cout <<"\nPhotometric Interpretation:\t"<<photometricsel;
 	cout <<"\nRescale slope:\t"<<rescaleslope;
 	cout <<"Rescale intercept:\t"<<rescaleint;
 	cout<<"\nComments:\t"<<comment;
+	displayct();
 }
 void MRI::settingMRI()
 {
@@ -380,12 +384,15 @@ cout <<"Enter any comments then press enter or just press return to enter none";
 getline(comment);
 
 
+cout <<"Please place the images in the same directory as the executable and rename it appropriately MRI.jpg  ";
 
 
 
 }
 void	MRI::displayMRI()
 {
+	cout <<"Please place the images in the same directory as the executable and rename it appropriately MRI.jpg  ";
+
 	system("MRI.jpg");
 
 }
@@ -402,6 +409,7 @@ void MRI::displayall()
 		cout<<"Repetition Time:\t"<<reptime;
 		cout<<"Echo time:\t:"<<echotime;
 		cout<<"Comments:\t"<<comment;
+		displayMRI();
 }
 void Ultrasound::settingultrasound()
 {
@@ -576,9 +584,13 @@ void Ultrasound::settingultrasound()
 	}
 	cout <<"Enter any comments then press enter or just press return to enter none";
 	getline(comment);
+	cout <<"Please place the images in the same directory as the executable and rename it appropriately US.jpg  ";
+
 }
 void Ultrasound::displayultrasound()
 {
+	cout <<"Please place the images in the same directory as the executable and rename it appropriately US.jpg  ";
+
 	system("US.jpg");
 }
 void Ultrasound::displayall()
@@ -593,7 +605,7 @@ void Ultrasound::displayall()
 		cout<<"\nPlaner configuration:\t"<<planerconfig;
 		cout<<"\nPixel Representation:\t"<<pixelrep;
 		cout<<"\nLossy image compression:\t"<<lossyimagecompression;
-
+displayultrasound();
 //
 
 }
