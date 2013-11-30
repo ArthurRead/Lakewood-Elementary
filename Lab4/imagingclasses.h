@@ -93,7 +93,7 @@ void settingultrasound();
 void displayall();
 };
 
-
+//
 
 
 #endif /* HEADER_H_ */

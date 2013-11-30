@@ -594,7 +594,7 @@ void Ultrasound::displayall()
 		cout<<"\nPixel Representation:\t"<<pixelrep;
 		cout<<"\nLossy image compression:\t"<<lossyimagecompression;
 
-
+//
 
 }
 
