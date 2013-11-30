@@ -9,6 +9,8 @@
 #define HEADER_H_
 #include  <iostream>
 #include <string>
+#include <sstring>
+#include <cstdlib>
 #include "imagingfunctions.h"
 
 class Imaging
