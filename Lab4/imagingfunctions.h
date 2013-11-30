@@ -7,7 +7,7 @@
 
 #ifndef IMAGINGFUNCTIONS_H_
 #define IMAGINGFUNCTIONS_H_
-
+#include <cstdlib>
 void Ct::settingCT()
 {
 	cout<< "\nPlease enter the first name of the patient\n";
@@ -97,6 +97,10 @@ void Ct::settingCT()
 	cin >> rescaleslope;
 	cout <<"Enter any comments or just press return to enter none";
 	getline(comment);
+}
+void Ct::displayct()
+{
+system("CT.jpg");
 }
 void MRI::settingMRI()
 {
@@ -363,6 +367,11 @@ getline(comment);
 
 
 }
+void	MRI::displayMRI()
+{
+	system("MRI.jpg");
+
+}
 void Ultrasound::settingultrasound()
 {
 	cout<< "\nPlease enter the first name of the patient\n";
@@ -534,14 +543,13 @@ void Ultrasound::settingultrasound()
 		}
 
 	}
-
-
-
-
 	cout <<"Enter any comments then press enter or just press return to enter none";
 	getline(comment);
 }
-
+void Ultrasound::displayultrasound()
+{
+	system("US.jpg");
+}
 
 
 
