@@ -12,7 +12,7 @@
 #include <sstring>
 #include <cstdlib>
 #include "imagingfunctions.h"
-
+//
 class Imaging
 {
 protected:
