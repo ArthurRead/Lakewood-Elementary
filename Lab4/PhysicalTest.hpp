@@ -41,9 +41,39 @@ private:
 	int respiratory; //0 normal, -1 below normal, 1 higher than normal - patients breathing status
 public:
 	void BloodPressure();
+	/*Checks if the blood pressure monitor was used
+	 * and then sees whether the patient is male or female.
+	 * In this case, it does not matter whether gender
+	 * is male or female. Then it sees what the systolic
+	 * and diastolic ranges are. If the blood pressure
+	 * falls between those values, then it gives a status
+	 * condition to the patient. If not, assigns critical status
+	 * to the patient.*/
+
 	void HeartBeat();
+
+	/*Checks if the blood pressure monitor was used. Then
+	 * check if the gender is male or female. Then
+	 * looks at the age range of the patient. Once the patient
+	 * falls between one of those ranges, it looks at the pulse of
+	 * that patient. Depending on the pulse rate, it assigns the
+	 * Heart condition.*/
+
 	void BodyTemp();
+
+	/*Checks what method the temperature was taken by. Then
+	 * looks at the thermometer reading ranges. Once the data
+	 * falls between one of those values, it assigns a
+	 * Temp regulation status to the patient.*/
 	void Breathing();
+
+	/*Check what gender, male or female. Then checks if the
+	 * right equipment was used (stethescope). Then checks
+	 * the weight of the patient. If it falls between some range,
+	 * it looks at the breathing rate of the patient. Once
+	 * the breathing rate falls between some range, it assigns
+	 * the condition of the patients respiratory status*/
+
 	void VitalsCheck();	//uses all of the tests and makes a conclusion to the data recieved from all tests in vital signs
 
 };
@@ -65,9 +95,25 @@ private:
 	int inflamed; //-1 not inflamed, 1 inflamed kidneys
 public:
 	void Inflamationcheck(/*protein level*/);	//high protein = inflamation in kidney
+
+	/*Checks if there are proteins present. If there are
+	 * the patient has inflamed kindey, if not then not inflamed*/
+
 	void diabetuscheck(/*int sugar and ketone*/);		//high ketone and sugar = diabetus
+
+	/*Checks if ketone is present or not in urine. Then looks
+	 * at the values of sugar and ketone values. Depending on
+	 * the ranges, it gives a diabetes status check,
+	 * yes or no*/
+
 	void bacterialcheck(/*int whitebloodcells and nitrite*/);		//high white bloodcells = bacterial infection (USE WHITEBLOODCELLS FROM BASE)
-	void UrineCheck();
+
+	/*checks if there are white blood cells, red blood cells
+	 * or nitrate preset. If they are not, it then checks the
+	 * ph value of the urine. If its between some range, it
+	 * gives a status to infected or not.*/
+
+	void UrineCheck();	//checks all tests and makes a conclusion
 	};
 
 class MobilityTest : public PhysicalTests {	//definetly this one
@@ -79,9 +125,33 @@ private:
 	int  T25FW; //Time to walk 25 foot steps test (actual test), if completed in a certain time = normal movement for legs
 public:
 	void neckmovement();
+
+	/*Checks the weight of the patient. If its between a value
+	 * then check the range of angles of joint mobility. Once that
+	 * is between a certain range it looks at the status of paralysis
+	 * of neck movement*/
+
 	void armmovement();
+
+	/*Check how much the arm can rotate (angle wise) with joint
+	 * mobility. Then sees if the arm paralysis state*/
+
 	void legmovement();
+
+	/*Check if the right equipment was used. If the reflex hammer
+	 * was used, it then looks at the weight of the patient. If it
+	 * falls between a range of values, it then looks at the angle of the movement
+	 * of the leg with joint_mobility. Then it checks if the T25FW (
+	 * Walking 25 feet test was successful or not.*/
+
 	void spinemovement();
+
+	/*Check what type of spine allignment the spine has.
+	 * Depending on the allignment, it looks at the weight
+	 * of the patient. It then looks at the angle (amount
+	 * the spine can bend/can't bend). Then it gives a condition
+	 * of paralysis if the spine is paralyzed or not.*/
+
 	void Testmobilitystatus();       //can move, somewhat, paralyzed
 };
 
@@ -119,9 +189,10 @@ public:
 
 //*******************************************************************************************************
 //**********************************LAB 4 ENDS HERE (Based on what's required)****************************
-//*******************************************************************************************************
-//*******************************************************************************************************
 
+
+//**********************************(If integers and variables in functions are required to be shown)*******
+//********************************************Please look below********************************************
 
 
 
