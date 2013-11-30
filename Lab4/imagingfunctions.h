@@ -10,13 +10,18 @@
 
 void Ct::settingCT()
 {
+	cout<< "\nPlease enter the first name of the patient\n";
+	cin >>firstname;
+	cout <<"\n Please enter the last name of the patient\n";
+	cin >> lastname;
 	cout<<"\nNow performing the settings of the CT\n";
 	cout<<"Please enter the type of image for the CT scan\n";
-	while(choice!=112)
+	int choice=0;
+	int exit1=0;
+	while(exit1==0)
 	{
 	cout <<"Press 1 for Axial\tPress 2 for Localizer";
-	int choice=11;
-	int exit1=0;
+
 	cin >>choice;
 
 	switch(choice)
@@ -32,18 +37,251 @@ void Ct::settingCT()
 	break;
 }
 	default:
-	{cout << "\nPlease enter your selection. Please\n";
+	{
+		cout << "\nPlease enter your selection. Please\n";
 
 	}
 	}
 	}
+	cout << "\nSmaple per pixel are automatically setted to 1 for CT scans\n?";
+	int samplesperpixel=1;
+	choice =0;
+	int exit=0;
+	while (exit==0){
+	cout << "\nPlease select the photometric interpretation\n";
+	cout <<"Pick 1 for MONOCHROME1 PICK 2 for MONOCHROME2\n";
+	cin >> choice;
+	switch (choice)
+	{
+	case 1:
+	{
+		photometricsel = "MONOCHROME1";
+		exit=1;
+	break;
+	}
+	case 2:
+	{	photometricsel - "MONOSCHROME2";
+		exit= 1;
+		break;
+	}
+	default:{
+		break;
+	}
+	}
+	}
+	cout <<"\nBits allocated is 16 bits for CT scans\n";
+	bitsallocated = 16;
+	exit = 0;
+	choice = 0;
+	while (exit == 0)
+	{
+		cout <<"Please enter how many bits are stored\n";
+			cin >> choice;
+			if (choice > 16 || choice <12)
+			{
+				cout << "\nPlease pick again\n";
+			}
+			else
+			{
+				bitstored = choice;
+				highbit = bitstored - 1;
+				cout << highbit << " is the high bit\n";
+				exit =1;
+			}
 
 
-
+	}
+	cout << "Please enter the rescale intercept\n";
+	cin >> rescaleint;
+	cout << "\nPlease enter the rescale slope\n";
+	cin >> rescaleslope;
+	cout <<"Enter any comments or just press return to enter none";
+	getline(comment);
 }
-void MRI::MRIScanningSeq()
+void MRI::settingMRI()
 {
+	cout<< "\nPlease enter the first name of the patient\n";
+		cin >>firstname;
+		cout <<"\n Please enter the last name of the patient\n";
+		cin >> lastname;
+		cout<<"\nNow performing the settings of the MRI\n";
+		cout<<"Please enter the type of image for the MRI scan\n";
+		int exit = 0;
+		int choice = 0;
+
+
+		cout << "\n Please enter one of the following'n";
+		cout << "1. for MPR\n2 for PROJECTION IMAGE\n3 for T1 MAP";
+	cout<<"\n4 for T2 MAP\n5 for DIFFUSION MAP\n6 for DENSITY MAP\n";
+	cout <<"7 forPHASE MAP\n8 for VELOCITY MAP\n9 for IMAGE ADDITION";
+	cout <<"10 for PHASE SUBTRACT\n11 for MODULUS SUBTRACT\n 13 of OTHER\n";
+	cin >> choice;
+	while (exit==0)
+	{
+		switch (choice)
+		{
+		case 1:
+		{
+			imagetype = "MPR";
+			exit =1;
+			break;
+		}
+		case 2:
+		{
+			imagetype ="PROJECTION IMAGE";
+			exit =1;
+			break;
+		}
+		case 3:
+		{
+			imagetype = "T1 MAP";
+			exit =1;
+			break;
+
+		}
+		case 4: {
+			imagetype = "T2 MAP";
+			exit =1;
+			break;
+		}
+		case 5 :
+		{
+			imagetype= "DIFFUSION MAP";
+			exit =1;
+			break;
+		}
+		case 6 : {
+			imagetype = "DENSITY MAP";
+			exit =1;
+			break;
+		}
+		case 7 :
+		{
+			imagetype = "PHASE MAP";
+			exit =1;
+			break;
+		}
+		case 8 :
+		{
+			imagetype = "Velocity MAP";
+			exit =1;
+			break;
+		}
+		case 9:
+		{
+			imagetype = "IMAGE ADDITION";
+			exit = 1;
+			break;
+		}
+		case 10:
+		{
+			imagetype = "PHASE SUBTRACT";
+			exit =1 ;
+			break;
+
+		}
+		case 11:
+		{
+			imagetype = "MODULUS SUBTRACT";
+					exit =1 ;
+					break;
+
+		}
+		case 12:
+		{
+			imagetype = "PHASE SUBTRACT";
+					exit =1 ;
+					break;
+		}
+		case 13:
+		{
+			cout <<"\nPlease type in the imagetype\n";
+			getline(imagetype);
+			exit =1;
+			break;
+		}
+		default:
+		{
+			break;
+		}
+		}
 
 }
+	cout <<"\nBits allocated is 16 bits for MRI scans\n";
+		bitsallocated = 16;
+		exit = 0;
+		choice = 0;
+		while (exit == 0)
+		{
+			cout <<"Please enter how many bits are stored\n";
+				cin >> choice;
+				if (choice > 16 || choice <12)
+				{
+					cout << "\nPlease pick again\n";
+				}
+				else
+				{
+					bitstored = choice;
+					highbit = bitstored - 1;
+					cout << highbit << " is the high bit\n";
+					exit =1;
+				}
 
+
+		}
+
+cout <<"\nPlease enter the Scan sequence\n";
+exit =1;
+choice =0;
+while (exit==0)
+{
+cout << "Please select one of the following options\n";
+cout << "1.SPIN ECHO\n2.Inversion Recovery\n3.Gradient Recalled\n";
+cout << "4.Echo Planer\n5.Research Mode\n";
+cin>> choice;
+switch (choice){
+case 1:
+{
+	Scanseq = "SPIN ECHO";
+	exit =1;
+	break;
+}
+case 2:
+{
+	Scanseq = "Inversion Recovery";
+	exit =1;
+	break;
+}
+case 3:
+{
+	Scanseq = "Gradient Recalled";
+	exit =1;
+	break;
+}
+case 4:
+{
+	Scanseq = "ECHO Planer";
+	exit =1;
+	break;
+}
+case 5:
+{
+	Scanseq = "Research Mode";
+	exit =1;
+	break;
+}
+
+default:
+{
+	break;
+}
+}
+}
+
+cout << "\nPlease enter";
+
+
+
+
+}
 #endif /* IMAGINGFUNCTIONS_H_ */
