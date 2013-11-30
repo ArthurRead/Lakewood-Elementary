@@ -364,7 +364,7 @@ getline(comment);
 
 
 
-
+/
 
 }
 void	MRI::displayMRI()
