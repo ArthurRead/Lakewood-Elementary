@@ -46,12 +46,12 @@ private:
 	// For Sequence Variant function
 	// Ask to set any variants or leave the settings alone (all = 0)
 	// values
-	int SK;
-	int MTC;
-	int SS;
-	int TRSS;
-	int OSP;
-
+	//int SK;
+	//int MTC;
+	//int SS;
+	//int TRSS;
+	//int OSP;
+	string sequencevar;
 public:
 	void settingMRI();
 	void displayMRI();
@@ -79,8 +79,8 @@ int photometricInterpretation;
 int bitstored;
 //int highbit;
 int planerconfig;
-int frameincrementpointer;
-int lossyimagecompression; // either 00 or 01
+string Pixelrep;
+string lossyimagecompression; // either 00 or 01
 public:
 void displayultrasound();
 void settingultrasound();

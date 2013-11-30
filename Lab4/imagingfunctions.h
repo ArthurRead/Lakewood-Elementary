@@ -277,11 +277,280 @@ default:
 }
 }
 }
+exit =0;
+choice = 0;
+while (exit==0)
+{
+cout << "\nPlease enter the Sequence Variant";
+cout << "\n1.Segmented K-space\n2.Magentization Transfer Contrast\n3.Steady State";
+cout << "\n4.Time Reversed Steady State\n5.Spoiled\n6.MAG prepared\n7.Oversampling Phase\n8.None";
+cin >> choice;
+ switch (choice)
+ {
+ case 1:
+ {
+	 sequencevar = "Segmented K-space";
+	 exit =1;
+	 break;
 
-cout << "\nPlease enter";
+ }
+ case 2:
+  {
+ 	 sequencevar = "Magnetization Transfer contrast";
+ 	 exit =1;
+ 	 break;
+
+  }
+ case 3:
+  {
+ 	 sequencevar = "Steady State";
+ 	 exit =1;
+ 	 break;
+
+  }
+ case 4:
+  {
+ 	 sequencevar = "Time Reversed Steady State";
+ 	 exit =1;
+ 	 break;
+
+  }
+ case 5:
+  {
+ 	 sequencevar = "Spoiled";
+ 	 exit =1;
+ 	 break;
+
+  }
+ case 6:
+  {
+ 	 sequencevar = "MAG prepared";
+ 	 exit =1;
+ 	 break;
+
+  }
+ case 1:
+  {
+ 	 sequencevar = "Oversampling phase";
+ 	 exit =1;
+ 	 break;
+
+  }
+ case 1:
+  {
+ 	 sequencevar = "NONE";
+ 	 exit =1;
+ 	 break;
+
+  }
+default:
+{
+	break;
+}
+ }
+
+
 
 
 
 
 }
+cout <<"Enter any comments then press enter or just press return to enter none";
+getline(comment);
+
+
+
+
+
+}
+void Ultrasound::settingultrasound()
+{
+	cout<< "\nPlease enter the first name of the patient\n";
+			cin >>firstname;
+			cout <<"\n Please enter the last name of the patient\n";
+			cin >> lastname;
+			cout<<"\nNow performing the settings of the ultrasound\n";
+			cout<<"Please enter the type of image for the ultrasound scan\n";
+			int exit = 0;
+			int choice = 0;
+
+			cout << "\n Press type in the image type from the following\n";
+			cout << "ABDOMINAL, BREAST, CHEST\n";
+			cout <<"ENDOCAVITARY, ENDORECTAL, ENDOVAGINAL\n";
+			cout <<"EPICARDIAL, FETAL HEART, GYNECOLOGY\n";
+			cout<<"INTRACARDIAC, INTRAOPERATIVE, INTRAVASCULAR\n";
+			cout<<"MUSCULOSKELETAL, NEONATAL HEAD, OBSTETRICAL\n";
+			cout <<"OPHTHALMIC, PEDIATRIC, PELVIC\n";
+			cout <<"RETROPERITONEAL, SCROTAL, SMALL PARTS\n";
+			cout <<"TEE, THYROID, TRANSCRANIAL\n";
+			cout <<"TTE, US BIOPSY, VASCULAR";
+			getline(imagetype);
+
+
+
+
+			cout << "\nPlease select the photometric interpreation \n";
+			while (exit==0)
+			{
+
+			cout <<"\n1.MONOCHROME2\n2.RGB\n3.YBR FULL\n4.YBRFULL 422\n";
+			cout <<"5.YRB Partial 422\n6.YBR RCT\n7.YBR ICT\n8.Palette Color 8bit\n9.Palette Color 16 bit\n";
+			cin >> choice;
+			switch (choice)
+			{
+			case 1:
+			{
+				photmetricInterpretation = "MONOCHROME2";
+				bitstored =  8;
+				samplesperpixel = 1;
+				bitallocated = 8;
+				highbit = bitallocated - 1;
+				planerconfig = 0 ;
+				exit=1;
+				break;
+			}
+			case 2:
+						{
+							photmetricInterpretation = "RGB";
+							bitstored =  8;
+							samplesperpixel =3 ;
+							bitallocated = 8;
+							highbit = bitallocated - 1;
+							planerconfig = 1;
+							exit=1;
+							break;
+						}
+			case 3:
+						{
+							photmetricInterpretation = "YBR FULL";
+							bitstored = 8 ;
+							samplesperpixel = 3;
+							bitallocated = 8;
+							highbit = bitallocated - 1;
+							planerconfig = 1;
+							exit=1;
+							break;
+						}
+			case 4:
+						{
+							photmetricInterpretation = "YBR FULL 422";
+							bitstored =  8;
+							samplesperpixel =3 ;
+							bitallocated =8 ;
+							highbit = bitallocated - 1;
+							planerconfig = 0;
+							exit=1;
+							break;
+						}
+			case 1:
+						{
+							photmetricInterpretation = "YBR PARTIAL 422";
+							bitstored =  8;
+							samplesperpixel = 3;
+							bitallocated = 8;
+							highbit = bitallocated - 1;
+							planerconfig = 0;
+							exit=1;
+							break;
+						}
+			case 1:
+						{
+							photmetricInterpretation = "YBR RCT";
+							bitstored =  8;
+							samplesperpixel = 3;
+							bitallocated = 8;
+							highbit = bitallocated - 1;
+							planerconfig =0 ;
+							exit=1;
+							break;
+						}
+
+			case 1:
+						{
+							photmetricInterpretation = "YBR ICT";
+							bitstored = 8 ;
+							samplesperpixel =3 ;
+							bitallocated = 8;
+							highbit = bitallocated - 1;
+							planerconfig = 0;
+							exit=1;
+							break;
+						}
+			case 1:
+						{
+							photmetricInterpretation = "Palette color 8 bit";
+							bitstored =8  ;
+							samplesperpixel = 1;
+							bitallocated =8 ;
+							highbit = bitallocated - 1;
+							planerconfig =0 ;
+							exit=1;
+							break;
+						}
+			case 1:
+						{
+							photmetricInterpretation = "Palette color 16 bit";
+							bitstored = 16 ;
+							samplesperpixel =1 ;
+							bitallocated = 16;
+							highbit = bitallocated - 1;
+							planerconfig = 0;
+							exit=1;
+							break;
+						}
+
+
+			}
+			}
+
+
+			Pixelrep = "0000H";
+	cout << "\nPixel Representation is equal to"<< Pixelrep<<"\n";
+	cout <<	"\nPlease enter the lossy image compression\n";
+	exit =0;
+	choice = 0;
+	while(exit ==0)
+	{
+		cout <<"1. 00\n 2.01";
+		cin >> choice;
+		switch (choice)
+		{
+		case 1:
+		{
+			exit =1;
+			lossyimagecompression ="00";
+			break;
+		}
+		case 2:
+		{
+			exit =1;
+			lossyimagecompression ="01";
+		}
+		default:
+		{
+			break;
+		}
+
+		}
+
+	}
+
+
+
+
+	cout <<"Enter any comments then press enter or just press return to enter none";
+	getline(comment);
+}
+
+
+
+
+
+
+
+
+
+
+
+
 #endif /* IMAGINGFUNCTIONS_H_ */
