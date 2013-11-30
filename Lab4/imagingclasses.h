@@ -54,9 +54,13 @@ private:
 	//int TRSS;
 	//int OSP;
 	string sequencevar;
+	int reptime;
+	int echotime;
+
 public:
 	void settingMRI();
 	void displayMRI();
+	void displayall();
 };
 class Ct:public Imaging{
 private:
@@ -65,14 +69,14 @@ private:
 string  photometricsel;// select either MONOCHROME1 or 2
 //only selected when samples per pixel is one
 //int bitsallocated;
-int bitsstored;  //should be b/t 12-16
+int bitstored;  //should be b/t 12-16
 //int highbit; //should be one less than bits stored
 int rescaleint;// the b in HU = m*SV+b
 int resaleslope; // m slope
 public:
 void settingCT();
 void displayct();
-
+void displayall();
 };
 class Ultrasound : public Imaging{
 //int samplesperpixel;
@@ -86,6 +90,7 @@ string lossyimagecompression; // either 00 or 01
 public:
 void displayultrasound();
 void settingultrasound();
+void displayall();
 };
 
 

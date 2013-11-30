@@ -102,6 +102,19 @@ void Ct::displayct()
 {
 system("CT.jpg");
 }
+void Ct::displayall()
+{
+	cout <<" \nThe patient is \t"<<firstname <<" "<<lastname;
+	cout <<"\nThe imagetype is \t"<<imagetype<<"\n";
+	cout <<"\nSamples per pixel is\t"<<samplesperpixel;
+	cout<<"\nBits allocated is\t"<<bitsallocated;
+	cout<<"\nHigh bit is \t"<<highbit;
+	cout <<"\nBits stored:\t"<<bitstored;
+cout <<"\nPhotometric Interpretation:\t"<<photometricsel;
+	cout <<"\nRescale slope:\t"<<rescaleslope;
+	cout <<"Rescale intercept:\t"<<rescaleint;
+	cout<<"\nComments:\t"<<comment;
+}
 void MRI::settingMRI()
 {
 	cout<< "\nPlease enter the first name of the patient\n";
@@ -112,7 +125,12 @@ void MRI::settingMRI()
 		cout<<"Please enter the type of image for the MRI scan\n";
 		int exit = 0;
 		int choice = 0;
-
+		cout << "Please enter the repetition time in ms";
+		cin >> reptime;
+		cout <<"Please enter the echo time in ms";
+		cin >> echotime;
+	while (exit==0)
+	{
 
 		cout << "\n Please enter one of the following'n";
 		cout << "1. for MPR\n2 for PROJECTION IMAGE\n3 for T1 MAP";
@@ -120,8 +138,7 @@ void MRI::settingMRI()
 	cout <<"7 forPHASE MAP\n8 for VELOCITY MAP\n9 for IMAGE ADDITION";
 	cout <<"10 for PHASE SUBTRACT\n11 for MODULUS SUBTRACT\n 13 of OTHER\n";
 	cin >> choice;
-	while (exit==0)
-	{
+
 		switch (choice)
 		{
 		case 1:
@@ -372,6 +389,20 @@ void	MRI::displayMRI()
 	system("MRI.jpg");
 
 }
+void MRI::displayall()
+{
+	cout <<" \nThe patient is \t"<<firstname <<" "<<lastname;
+		cout <<"\nThe imagetype is \t"<<imagetype<<"\n";
+		cout <<"\nSamples per pixel is\t"<<samplesperpixel;
+		cout<<"\nBits allocated is\t"<<bitsallocated;
+		cout<<"\nHigh bit is \t"<<highbit;
+		cout <<"\nBits stored:\t"<<bitstored;
+		cout<<"\nScan sequence:\t"<<Scanseq;
+		cout <<"\nSequence Variant:\t"<<sequencevar;
+		cout<<"Repetition Time:\t"<<reptime;
+		cout<<"Echo time:\t:"<<echotime;
+		cout<<"Comments:\t"<<comment;
+}
 void Ultrasound::settingultrasound()
 {
 	cout<< "\nPlease enter the first name of the patient\n";
@@ -420,7 +451,7 @@ void Ultrasound::settingultrasound()
 			}
 			case 2:
 						{
-							photmetricInterpretation = "RGB";
+							photometricInterpretation = "RGB";
 							bitstored =  8;
 							samplesperpixel =3 ;
 							bitallocated = 8;
@@ -431,7 +462,7 @@ void Ultrasound::settingultrasound()
 						}
 			case 3:
 						{
-							photmetricInterpretation = "YBR FULL";
+							photometricInterpretation = "YBR FULL";
 							bitstored = 8 ;
 							samplesperpixel = 3;
 							bitallocated = 8;
@@ -442,7 +473,7 @@ void Ultrasound::settingultrasound()
 						}
 			case 4:
 						{
-							photmetricInterpretation = "YBR FULL 422";
+							photometricInterpretation = "YBR FULL 422";
 							bitstored =  8;
 							samplesperpixel =3 ;
 							bitallocated =8 ;
@@ -453,7 +484,7 @@ void Ultrasound::settingultrasound()
 						}
 			case 1:
 						{
-							photmetricInterpretation = "YBR PARTIAL 422";
+							photometricInterpretation = "YBR PARTIAL 422";
 							bitstored =  8;
 							samplesperpixel = 3;
 							bitallocated = 8;
@@ -464,7 +495,7 @@ void Ultrasound::settingultrasound()
 						}
 			case 1:
 						{
-							photmetricInterpretation = "YBR RCT";
+							photometricInterpretation = "YBR RCT";
 							bitstored =  8;
 							samplesperpixel = 3;
 							bitallocated = 8;
@@ -476,7 +507,7 @@ void Ultrasound::settingultrasound()
 
 			case 1:
 						{
-							photmetricInterpretation = "YBR ICT";
+							photometricInterpretation = "YBR ICT";
 							bitstored = 8 ;
 							samplesperpixel =3 ;
 							bitallocated = 8;
@@ -487,7 +518,7 @@ void Ultrasound::settingultrasound()
 						}
 			case 1:
 						{
-							photmetricInterpretation = "Palette color 8 bit";
+							photometricInterpretation = "Palette color 8 bit";
 							bitstored =8  ;
 							samplesperpixel = 1;
 							bitallocated =8 ;
@@ -498,7 +529,7 @@ void Ultrasound::settingultrasound()
 						}
 			case 1:
 						{
-							photmetricInterpretation = "Palette color 16 bit";
+							photometricInterpretation = "Palette color 16 bit";
 							bitstored = 16 ;
 							samplesperpixel =1 ;
 							bitallocated = 16;
@@ -550,7 +581,22 @@ void Ultrasound::displayultrasound()
 {
 	system("US.jpg");
 }
+void Ultrasound::displayall()
+{
+	cout <<" \nThe patient is \t"<<firstname <<" "<<lastname;
+		cout <<"\nThe image type is \t"<<imagetype<<"\n";
+		cout <<"\nSamples per pixel is\t"<<samplesperpixel;
+		cout<<"\nBits allocated is\t"<<bitsallocated;
+		cout<<"\nHigh bit is \t"<<highbit;
+		cout <<"\nBits stored:\t"<<bitstored;
+		cout<<"\nPhotometric Interpretation:\n"<<photometricInterpretation;
+		cout<<"\nPlaner configuration:\t"<<planerconfig;
+		cout<<"\nPixel Representation:\t"<<pixelrep;
+		cout<<"\nLossy image compression:\t"<<lossyimagecompression;
 
+
+
+}
 
 
 
