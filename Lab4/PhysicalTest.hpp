@@ -86,13 +86,13 @@ private:
 	int ketone;		//in mg/dL
 	int nitrate;	//used
 	int bilirubin; //(breaks down hemoglobin. Defective = bad blood.	NOT USED YEt!!!!
-	int ketonecheck;	//is ketone present or not 1 yes, 0 no
-	int diabetescheck; //0 maybe, 1 yes, -1 no
 	int redbloodcells;
 	int whitebloodcells;
 	//**************status checking***************************
 	int infected; //0 maybe, 1 yes, -1 no
 	int inflamed; //-1 not inflamed, 1 inflamed kidneys
+	int diabetescheck; //0 maybe, 1 yes, -1 no
+	int ketonecheck;	//is ketone present or not 1 yes, 0 no
 public:
 	void Inflamationcheck(/*protein level*/);	//high protein = inflamation in kidney
 
@@ -121,8 +121,9 @@ private:
 	int joint_mobility;	// angle of mobile joint
 	int type_of_spine_allignemnt;  //curved, bent, straight, etc.
 	int reflexhammer;
-	int paralyzed;	//limited, average, too much
 	int  T25FW; //Time to walk 25 foot steps test (actual test), if completed in a certain time = normal movement for legs
+	//*******************status check*********************************
+	int paralyzed;	//limited, average, too much
 public:
 	void neckmovement();
 
@@ -526,7 +527,7 @@ void MobilityTest::spinemovement(){
 
 	if (type_of_spine_allignemnt == 'straight'){
 		paralyzed = -1;
-
+	}
 }
 
 
