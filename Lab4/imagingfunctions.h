@@ -105,6 +105,15 @@ void Ct::displayct()
 cout <<"Please place the images in the same directory as the executable and rename it appropriately CT.jpg  ";
 system("CT.jpg");
 }
+void Ct::addcomment()
+{
+	cout<<"\n"<<comment;
+	cout <<"\nPlease enter the comments\n";
+	cin >> morecomment;
+	comment+=morecomment;
+
+
+}
 void Ct::displayall()
 {
 	cout <<" \nThe patient is \t"<<firstname <<" "<<lastname;
@@ -396,6 +405,7 @@ void	MRI::displayMRI()
 	system("MRI.jpg");
 
 }
+void
 void MRI::displayall()
 {
 	cout <<" \nThe patient is \t"<<firstname <<" "<<lastname;
@@ -410,6 +420,15 @@ void MRI::displayall()
 		cout<<"Echo time:\t:"<<echotime;
 		cout<<"Comments:\t"<<comment;
 		displayMRI();
+}
+void MRI::addcomment()
+{
+	cout<<"\n"<<comment;
+	cout <<"\nPlease enter the comments\n";
+	cin >> morecomment;
+	comment+=morecomment;
+
+
 }
 void Ultrasound::settingultrasound()
 {
@@ -448,6 +467,7 @@ void Ultrasound::settingultrasound()
 			{
 			case 1:
 			{
+
 				photmetricInterpretation = "MONOCHROME2";
 				bitstored =  8;
 				samplesperpixel = 1;
@@ -592,6 +612,16 @@ void Ultrasound::displayultrasound()
 	cout <<"Please place the images in the same directory as the executable and rename it appropriately US.jpg  ";
 
 	system("US.jpg");
+}
+void Ultrasound::addcomment()
+
+{
+	cout<<"\n"<<comment;
+	cout <<"\nPlease enter the comments\n";
+	cin >> morecomment;
+	comment+=morecomment;
+
+
 }
 void Ultrasound::displayall()
 {

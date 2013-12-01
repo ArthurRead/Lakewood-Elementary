@@ -23,6 +23,7 @@ protected:
 	int bitsallocated;
 	int highbit;
 	string comment;
+	string morecomment;
 };
 
 class MRI : public Imaging {
@@ -61,6 +62,7 @@ public:
 	void settingMRI();
 	void displayMRI();
 	void displayall();
+	void addcomment();
 };
 class Ct:public Imaging{
 private:
@@ -77,6 +79,7 @@ public:
 void settingCT();
 void displayct();
 void displayall();
+void addcomment();
 };
 class Ultrasound : public Imaging{
 //int samplesperpixel;
@@ -91,6 +94,7 @@ public:
 void displayultrasound();
 void settingultrasound();
 void displayall();
+void addcomment();
 };
 
 //
