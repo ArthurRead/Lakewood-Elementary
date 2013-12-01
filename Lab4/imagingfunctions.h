@@ -108,7 +108,7 @@ system("CT.jpg");
 void Ct::addcomment()
 {
 	cout<<"\n"<<comment;
-	cout <<"\nPlease enter the comments\n";
+	cout <<"\nPlease enter the comments and add your Name + ID with the comment\n";
 	cin >> morecomment;
 	comment+=morecomment;
 
@@ -407,7 +407,7 @@ void MRI::displayall()
 void MRI::addcomment()
 {
 	cout<<"\n"<<comment;
-	cout <<"\nPlease enter the comments\n";
+	cout <<"\nPlease enter the comments and add your Name + ID with the comment\n";
 	cin >> morecomment;
 	comment+=morecomment;
 
@@ -585,7 +585,7 @@ void Ultrasound::settingultrasound()
 		}
 
 	}
-	cout <<"Enter any comments then press enter or just press return to enter none";
+	cout <<"Enter any comments (Please enter your name/ID along with the comment then press enter or just press return to enter none";
 	getline(comment);
 	cout <<"Please place the images in the same directory as the executable and rename it appropriately US.jpg  ";
 
@@ -600,7 +600,7 @@ void Ultrasound::addcomment()
 
 {
 	cout<<"\n"<<comment;
-	cout <<"\nPlease enter the comments\n";
+	cout <<"\nPlease enter the comments and add your Name + ID with the comment\n";
 	cin >> morecomment;
 	comment+=morecomment;
 
