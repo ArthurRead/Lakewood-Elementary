@@ -20,8 +20,7 @@ protected:
 	string lastname;
 	string imagetype;
 	int samplesperpixel;
-	int bitsallocated;
-	int highbit;
+
 	string comment;
 	string morecomment;
 };
@@ -35,7 +34,8 @@ private:
 	//int samplesperpixel;
 	//int bitsallocated;
 	//int highbit;
-
+	int bitsallocated;
+		//int highbit;
 	// For
 	//needs enumerated values
 	//for scanning sequence   NO SE and GR together in one go
@@ -45,7 +45,7 @@ private:
 	//int GradientRecalled;
 	//int Echoplanar;
 	//int researchmode;
-
+//int bitstored;
 	// For Sequence Variant function
 	// Ask to set any variants or leave the settings alone (all = 0)
 	// values
@@ -75,6 +75,8 @@ int bitstored;  //should be b/t 12-16
 //int highbit; //should be one less than bits stored
 int rescaleint;// the b in HU = m*SV+b
 int resaleslope; // m slope
+int bitsallocated;
+	int highbit;
 public:
 void settingCT();
 void displayct();
@@ -83,10 +85,12 @@ void addcomment();
 };
 class Ultrasound : public Imaging{
 //int samplesperpixel;
-int photometricInterpretation;
+string photometricInterpretation;
 //int bitallocated;
 int bitstored;// how many bits are stored
 //int highbit;
+int bitsallocated;
+	int highbit;
 int planerconfig;//
 string Pixelrep;//pixel representation
 string lossyimagecompression; // either 00 or 01 type of compression

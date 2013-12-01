@@ -145,7 +145,7 @@ void MRI::settingMRI()
 	while (exit==0)
 	{
 
-		cout << "\n Please enter one of the following'n";
+		cout << "\n Please enter one of the following for the image type\n";
 		cout << "1. for MPR\n2 for PROJECTION IMAGE\n3 for T1 MAP";
 	cout<<"\n4 for T2 MAP\n5 for DIFFUSION MAP\n6 for DENSITY MAP\n";
 	cout <<"7 forPHASE MAP\n8 for VELOCITY MAP\n9 for IMAGE ADDITION";
@@ -245,24 +245,7 @@ void MRI::settingMRI()
 		bitsallocated = 16;
 		exit = 0;
 		choice = 0;
-		while (exit == 0)
-		{
-			cout <<"Please enter how many bits are stored\n";
-				cin >> choice;
-				if (choice > 16 || choice <12)
-				{
-					cout << "\nPlease pick again\n";
-				}
-				else
-				{
-					bitstored = choice;
-					highbit = bitstored - 1;
-					cout << highbit << " is the high bit\n";
-					exit =1;
-				}
 
-
-		}
 
 cout <<"\nPlease enter the Scan sequence\n";
 exit =1;
